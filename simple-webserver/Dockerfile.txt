@@ -1,0 +1,12 @@
+# On part de l'image python:3.9-slim
+FROM python:3.9-slim 
+
+# On se place dans ce dossier dans le conteneur
+WORKDIR /usr/src/app
+
+# On copie le fichier index.html dans le Working Directory
+COPY index.html .
+
+# On lance un serveur http à partir du module Python http 
+# On sert sur le port 8000
+CMD ["python", "-m", "http.server", "8000"]
